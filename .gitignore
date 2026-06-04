@@ -1,7 +1,24 @@
+# 1. Dependências do Projeto (MUITO IMPORTANTE)
 node_modules/
 
+# 2. Código Compilado (Saída do TypeScript)
+dist/
+build/
+
+# 3. Variáveis de Ambiente (Segurança)
 .env
+.env.local
 
+# 4. Logs de erro do NPM
 npm-debug.log*
-
+yarn-debug.log*
 yarn-error.log*
+*.log
+
+# 5. Configurações locais do seu Editor de Código
+.vscode/
+.idea/
+
+# 6. Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db   
