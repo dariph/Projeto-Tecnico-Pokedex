@@ -6,13 +6,11 @@ export class BoxService {
   private pokemons: PokemonResumo[] = [];
   private readonly filePath = "./pc_box.json";
 
-  // Camada de Persistência Local usando node:fs/promises
   async carregarBox(): Promise<void> {
     try {
       const data = await fs.readFile(this.filePath, "utf-8");
       this.pokemons = JSON.parse(data);
     } catch (error) {
-      // Cria o array vazio se o arquivo falhar ou não existir
       this.pokemons = [];
       await this.salvarBox();
     }
@@ -27,7 +25,6 @@ export class BoxService {
   }
 
   async adicionar(pokemon: PokemonResumo): Promise<void> {
-    // Uso do método some
     const jaExiste = this.pokemons.some((item) => item.id === pokemon.id);
 
     if (jaExiste) {
@@ -47,7 +44,7 @@ export class BoxService {
     }
 
     console.log("\nCatálogo atual:");
-    // Uso do método forEach
+
     this.pokemons.forEach((pokemon) => {
       console.log(
         `#${pokemon.id} ${pokemon.nome} | Tipos: ${pokemon.tipos.join(", ")} | Altura: ${pokemon.altura} | Peso: ${pokemon.peso}`,
@@ -64,7 +61,6 @@ export class BoxService {
       return;
     }
 
-    // Uso do método filter
     this.pokemons = this.pokemons.filter((pokemon) => pokemon.id !== id);
     await this.salvarBox();
     console.log("[OK] Pokémon removido do catálogo.");

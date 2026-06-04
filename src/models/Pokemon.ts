@@ -1,4 +1,3 @@
-// Molde rigoroso dos atributos consumidos da API
 export interface PokemonApiResponse {
   id: number;
   name: string;
@@ -11,7 +10,6 @@ export interface PokemonApiResponse {
   }[];
 }
 
-// Entidade simplificada do domínio
 export interface PokemonResumo {
   id: number;
   nome: string;
