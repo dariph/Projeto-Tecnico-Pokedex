@@ -1,6 +1,6 @@
-import { PokeApiService } from "./services/PokeApiService";
-import { BoxService } from "./services/BoxService";
-import { TerminalController } from "./controllers/TerminalController";
+import { TerminalController } from "./controllers/TerminalController.js";
+import { BoxService } from "./services/BoxService.js";
+import { PokeApiService } from "./services/PokeApiService.js";
 
 async function main() {
   const pokeApiService = new PokeApiService();
@@ -11,4 +11,6 @@ async function main() {
   await terminalController.iniciar();
 }
 
-main();
+main().catch((erro: unknown) => {
+  console.error("Erro na execução principal:", erro);
+});

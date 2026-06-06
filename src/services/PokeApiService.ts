@@ -28,7 +28,7 @@ export class PokeApiService {
 
       console.log(`[OK] Pokémon encontrado: ${pokemonResumo.nome}`);
       return pokemonResumo;
-    } catch (erro) {
+    } catch {
       console.log("[ERRO] Não foi possível buscar o Pokémon. Falha na rede.");
       return null;
     }

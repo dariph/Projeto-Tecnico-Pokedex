@@ -1,5 +1,5 @@
-import { PokeApiService } from "../services/PokeApiService";
-import { BoxService } from "../services/BoxService";
+import { BoxService } from "../services/BoxService.js";
+import { PokeApiService } from "../services/PokeApiService.js";
 
 export class TerminalController {
   constructor(
