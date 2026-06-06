@@ -5,6 +5,9 @@ import prettierPlugin from "eslint-plugin-prettier";
 import tseslint from "typescript-eslint";
 
 const config = defineConfig(
+  {
+    ignores: ["eslint.config.mjs", "eslint.config.js"],
+  },
   eslint.configs.recommended,
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
@@ -12,7 +15,7 @@ const config = defineConfig(
     languageOptions: {
       parserOptions: {
         projectService: {
-          allowDefaultProject: ["*.js"],
+          allowDefaultProject: ["*.js", "*.mjs"],
         },
         tsconfigRootDir: import.meta.dirname,
       },
